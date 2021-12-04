@@ -1,25 +1,39 @@
+const fs = require("fs");
+
+const array = fs
+  .readFileSync("day2.txt", { encoding: "utf-8" })
+  .split("\n")
+  .filter((x) => Boolean(x))
+  .map((x) => {
+    const [a, b] = x.split(" ");
+    return { a, b: parseInt(b) };
+  });
+
+console.log("array", array);
+
 const myFunction = (array) => {
   let horizontal = 0;
   let vertical = 0;
 
-  for (let i = 1; i < array.length; i++) {
-    if (array[i - 1] === "forward") {
-      horizontal += array[i];
+  for (let i = 0; i < array.length; i++) {
+    const direction = array[i].a;
+    const distance = array[i].b;
+
+    if (direction === "forward") {
+      horizontal += distance;
     }
 
-    if (array[i - 1] === "up") {
-      vertical -= array[i];
+    if (direction === "up") {
+      vertical -= distance;
     }
 
-    if (array[i - 1] === "down") {
-      vertical += array[i];
+    if (direction === "down") {
+      vertical += distance;
     }
   }
 
   return horizontal * vertical;
 };
-
-const array = [];
 
 const value = myFunction(array);
 
@@ -32,26 +46,27 @@ const myFunction2 = (array) => {
   let vertical = 0;
   let aim = 0;
 
-  for (let i = 1; i < array.length; i++) {
-    if (array[i - 1] === "forward") {
-      horizontal += array[i];
-      vertical += array[i] * aim;
+  for (let i = 0; i < array.length; i++) {
+    const direction = array[i].a;
+    const distance = array[i].b;
+
+    if (direction === "forward") {
+      horizontal += distance;
+      vertical += distance * aim;
     }
 
-    if (array[i - 1] === "up") {
-      aim -= array[i];
+    if (direction === "up") {
+      aim -= distance;
     }
 
-    if (array[i - 1] === "down") {
-      aim += array[i];
+    if (direction === "down") {
+      aim += distance;
     }
   }
 
   return horizontal * vertical;
 };
 
-const array2 = [];
-
-const value2 = myFunction2(array2);
+const value2 = myFunction2(array);
 
 console.log(value2);
