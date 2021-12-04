@@ -9,8 +9,6 @@ const array = fs
     return { a, b: parseInt(b) };
   });
 
-console.log("array", array);
-
 const myFunction = (array) => {
   let horizontal = 0;
   let vertical = 0;
