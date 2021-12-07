@@ -114,5 +114,3 @@ const getCo2 = (array, i = 0) => {
 const value2 = parseInt(getOxygen(array), 2) * parseInt(getCo2(array), 2);
 
 console.log(value2);
-
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
