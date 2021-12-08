@@ -1,3 +1,11 @@
+const fs = require("fs");
+
+const array = fs
+  .readFileSync("day1.txt", { encoding: "utf-8" })
+  .split("\n")
+  .filter((x) => Boolean(x))
+  .map((x) => Number(x));
+
 const myFunction = (array) => {
   let total = 0;
 
@@ -9,8 +17,6 @@ const myFunction = (array) => {
 
   return total;
 };
-
-const array = [];
 
 const value = myFunction(array);
 
@@ -34,8 +40,6 @@ const myFunction2 = (array) => {
   return total;
 };
 
-const array2 = [];
-
-const value2 = myFunction2(array2);
+const value2 = myFunction2(array);
 
 console.log(value2);
