@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 const array = fs
-  .readFileSync("day3.txt", { encoding: "utf-8" })
+  .readFileSync("day03.txt", { encoding: "utf-8" })
   .split("\n")
   .filter((x) => Boolean(x));
 
