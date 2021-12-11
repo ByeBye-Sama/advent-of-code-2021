@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 const array = fs
-  .readFileSync("day7.txt", { encoding: "utf-8" })
+  .readFileSync("day07.txt", { encoding: "utf-8" })
   .split(",")
   .map((x) => Number(x));
 
