@@ -25,9 +25,11 @@ const myFunction = (coordinates, foldInstructions) => {
 
   let nextPoints = [];
 
-  for (const fold of foldInstructions) {
-    for (let i = 0; i < points.length; i++) {
-      const point = points[i];
+  for (let i = 0; i < foldInstructions.length; i++) {
+    const fold = foldInstructions[i];
+
+    for (let x = 0; x < points.length; x++) {
+      const point = points[x];
 
       if (point[fold.axis] > fold.position) {
         point[fold.axis] =
@@ -54,7 +56,9 @@ const myFunction2 = (coordinates, foldInstructions) => {
 
   let nextPoints = [];
 
-  for (const fold of foldInstructions) {
+  for (let i = 0; i < foldInstructions.length; i++) {
+    const fold = foldInstructions[i];
+
     for (let i = 0; i < points.length; i++) {
       const point = points[i];
 
